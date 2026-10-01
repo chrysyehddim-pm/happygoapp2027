@@ -43,3 +43,11 @@ AI 參考图沒有作為頁面背景或全頁圖片載入。僅取用機器人�
 2026-10-01 已部署至 https://chrysyehddim-pm.github.io/happygoapp2027/ ，GitHub Actions 部署成功。使用同一套 12 組回歸測試對公開展示網址驗證，全部通過，無素材 404 或 JavaScript 錯誤。
 
 `node tools/test-live.cjs` 可重新執行線上驗證；Playwright 與瀏覽器設定同本機測試。
+
+## 指定文字與排版調整
+
+消費加碼活動改為「消費滿7筆贈100點」，活動圖片文字同步修改，示範進度為 2／7 筆；「查看進度」呈現相同進度。生活娛樂標題改為「兌點加碼活動」。蘭蔻卡片僅取宣傳圖片，簽到按鈕獨立且四周不裁切。三類小工具底部留白增加，其他區塊位置及旅程保留。
+
+`tools/test-request.cjs` 驗證新文案、2／7 比例、進度與說明彈窗、三類固定位置、底部留白，以及蘭蔻圖與按鈕分離。桌機與手機截圖已檢查，既有 12 組回歸測試通過。部署後可設定 `DEMO_URL=https://chrysyehddim-pm.github.io/happygoapp2027/` 執行同一組指定修改測試。
+
+活動圖以 built-in imagegen 做文字局部編輯，成品為 `assets/visual/campaign-consumption.png`；最終提示詞保留於同名 `.prompt.txt`。

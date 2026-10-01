@@ -211,3 +211,12 @@
 .campaign-body,.campaign-art{height:194px}.campaign-footer{margin-top:12px}.campaign-footer .btn{padding:10px 14px}.primary-card:has(.daily-task){display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:43px 1fr;gap:0 18px}.primary-card:has(.daily-task) .section-label{grid-column:1/-1}.daily-task{height:239px}.task-footer{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:24px;font-size:26px;color:#303035}.task-footer .btn{font-size:25px;background:linear-gradient(110deg,#7531ff,#4c10e0)}
 .life-grid .tile .banner-link{height:181px}.life-grid .tile:first-child .banner-link{height:214px}.life-grid .tile:nth-child(n+3) .banner-link{height:159px}.life-grid .product-name{font-size:18px;margin:8px 0}.life-grid .small-cta{font-size:21px;padding:6px 22px}.life-grid .points{font-size:27px}
 .tabs button{display:flex;align-items:center;justify-content:center;gap:10px;font-size:22px}.tabs button svg{width:30px;height:30px;flex:none}.tool-circle svg{width:45px;height:45px}.quick-grid button{display:flex;align-items:center;gap:10px;font-size:20px}.quick-grid button svg{width:31px;height:31px;flex:none}.ai-input button svg{width:32px;height:32px}.ai-page .topbar .visual-art{border-radius:50%}
+
+/* Requested task image framing and breathing room below the tool labels. */
+.task-list-art{height:auto;aspect-ratio:780 / 401;background:none;overflow:hidden}
+.task-list-art svg{display:block;width:100%;height:100%}
+.task-list-card{padding-bottom:28px}
+.task-list-card h2{margin-top:24px;line-height:1.5}
+.task-list-card p{margin:14px 22px 22px}
+.task-list-card .btn.full{width:calc(100% - 44px);margin:0 22px}
+.category .tools{height:225px}
