@@ -37,7 +37,7 @@ AI 入口約 4 秒後靠右收合。點擊收合入口先展開，再點進入�
 
 ## 測試
 
-專案未提供獨立《Demo 最終規格 v1.1》全文，本次依原 README 所列 v1.1 旅程摘要及新需求驗證，詳見 `TESTING.md`。不能据此宣稱已驗收未提供的條文。
+部署前已取得《Demo 最終規格 v1.1》全文，核對固定骨架、輪播、彩蛋旅程與 AI 元件要求；12 組瀏覽器回歸測試已通過，詳見 `TESTING.md`。
 
 瀏覽器測試：`node tools/test-demo.cjs`，需可用的 Playwright。可用 `PLAYWRIGHT_MODULE` 指向已安裝套件，`BROWSER_EXECUTABLE` 指向 Chrome／Edge；省略後者使用 Playwright 自帶 Chromium。测试會產出 `test-results/results.json` 與各頁截圖。
 
@@ -49,7 +49,7 @@ AI 入口約 4 秒後靠右收合。點擊收合入口先展開，再點進入�
 
 也可解壓展示包到 repository 根目錄，在 Pages 選擇 Deploy from a branch，指定分支及 /(root)。程式使用相對路徑，可部署在 repository 子目錄網址。
 
-目前工作資料夾不是 Git repository，沒有遠端 repository 或已發布網址。本次僅準備部署檔案，尚未上傳或發布。
+已連結 https://github.com/chrysyehddim-pm/happygoapp2027 。GitHub Pages 使用 GitHub Actions 部署；展示網址：https://chrysyehddim-pm.github.io/happygoapp2027/ 。推送至 main 後會自動更新展示。
 
 ## 素材與檔案
 
@@ -59,3 +59,4 @@ AI 入口約 4 秒後靠右收合。點擊收合入口先展開，再點進入�
 - `assets/fonts/LICENSE.txt`：Noto Sans TC 字型授權。
 - `tools/build-pages.cjs`：公開展示包建置。
 - `tools/test-demo.cjs`：瀏覽器旅程回歸測試。
+
