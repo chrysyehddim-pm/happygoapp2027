@@ -261,6 +261,7 @@
 .warrior-card h2{height:30px;font-size:26px;line-height:30px}
 .warrior-stage{border-radius:16px;overflow:hidden;background:#e4f6d9}
 .warrior-stage>.visual-art:first-child{inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.warrior-stage::after{content:'';position:absolute;inset:0;background:rgba(255,250,240,.15);z-index:0;pointer-events:none}
 .warrior-stage>.visual-art:last-child{inset:15% 0 4%;width:100%;height:81%;object-fit:contain;z-index:1}
 .forest-entry{font-size:22px;padding:12px 6px;line-height:1.3;border-radius:18px}
 .play-service-stack{gap:12px}
