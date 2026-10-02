@@ -310,6 +310,8 @@
 /* Brief side reminders run only while the AI entry is idle and collapsed. */
 .ai-fab.collapsed.peeking{animation:ai-side-peek 1.2s ease-in-out;opacity:1}
 @keyframes ai-side-peek{0%,100%{transform:translateX(58px) rotate(0)}25%{transform:translateX(34px) rotate(-4deg)}42%{transform:translateX(34px) rotate(4deg)}60%{transform:translateX(34px) rotate(-2deg)}75%{transform:translateX(34px) rotate(0)}}
-.play-service-stack .play-task-card .banner-link{background:#214519}
+.play-service-stack .play-task-card{padding:10px;grid-template-rows:24px minmax(0,1fr) 12px;gap:4px}
+.play-service-stack .play-task-card h2{height:24px;line-height:24px}
+.play-service-stack .play-task-card .banner-link{background:transparent;aspect-ratio:16 / 7;height:auto;align-self:center}
 .service-promo-art{height:220px;margin:24px 0}
 .service-promo-art>.visual-art{object-fit:contain}
