@@ -66,3 +66,10 @@ AI 參考图沒有作為頁面背景或全頁圖片載入。僅取用機器人�
 遊戲玩樂中段維持 586px 高度，左側為靜態女性發票戰士與獨立發票森林入口，右側依序為指定任務、遊戲樂園、GO HEALTH。指定任務保留當日固定內容，兩個服務保留各三張輪播。新小卡素材統一 1000×400、contain 完整顯示；發票戰士透明 PNG 保留全身。
 
 `tools/test-forest.cjs` 驗證卡片安全範圍、六張小卡圖尺寸、發票森林 → 電子發票 → 返回、既有三個服務入口、手機顯示與固定彩蛋位置；原有 v1.1 的 12 組旅程與素材檢查均通過。生成方式為 built-in imagegen，提示詞與最終素材路徑記錄於 `assets/visual/forest-prompts.json`。
+
+
+## 森林分層與推薦文案
+
+發票戰士使用獨立森林背景 `invoice-forest-background.png` 與透明人物 `invoice-warrior.png`，可分別替換。右側三張卡片統一高度、標題／內容／底部配置，左側與整組右側上下對齊。遊戲樂園與 GO HEALTH 各三組主副標為原生文字，與圖片及可及性標籤同步輪播。補回玩遊戲點數兩倍贈、首玩加碼及限時任務、探索新遊戲、健康小學堂、每天動腦文案。
+
+`tools/test-forest.cjs` 已加入背景／人物雙圖層、等高與對齊、六組文案同步及內容安全邊界檢查。桌機與手機截圖人工檢查、v1.1 原有 12 組旅程測試通過。森林背景由 built-in imagegen 生成，提示詞保留於 `assets/visual/invoice-forest-background.prompt.txt`。

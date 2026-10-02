@@ -254,3 +254,29 @@
 .compact-task-label{font-size:16px;text-align:center;margin-top:7px;color:#5a476c;flex:none}
 .forest-panel{background:linear-gradient(155deg,#fff,#e9f8e5);border-radius:24px;padding:24px;text-align:center;margin-bottom:20px}
 .forest-panel>.visual-art{height:550px;object-fit:contain;margin:18px 0}
+
+/* Layered forest and a shared header/body/footer rhythm for gaming cards. */
+.play-service-grid{grid-template-columns:240px minmax(0,1fr);gap:12px}
+.warrior-card{padding:14px;gap:10px;border-radius:24px}
+.warrior-card h2{height:30px;font-size:26px;line-height:30px}
+.warrior-stage{border-radius:16px;overflow:hidden;background:#e4f6d9}
+.warrior-stage>.visual-art:first-child{inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.warrior-stage>.visual-art:last-child{inset:15% 0 4%;width:100%;height:81%;object-fit:contain;z-index:1}
+.forest-entry{font-size:22px;padding:12px 6px;line-height:1.3;border-radius:18px}
+.play-service-stack{gap:12px}
+.play-service-stack .tile{display:grid;grid-template-rows:28px minmax(0,1fr) 12px;gap:7px;padding:12px;border-radius:24px}
+.play-service-stack .tile h2{height:28px;line-height:28px;margin:0;font-size:24px;display:flex;align-items:center;justify-content:space-between}
+.play-service-stack .tile h2 small{float:none}
+.play-service-stack .tile .banner-link{height:100%;aspect-ratio:auto;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);align-items:center;gap:4px;border-radius:12px;padding:6px 8px;background:#f3edff;text-align:left;color:#31057e}
+.play-service-stack .play-task-card .banner-link{background:#fff2e7;color:#854318}
+.play-service-stack .tile[data-banner="health"] .banner-link{background:#e4f9ef;color:#22664b}
+.play-promotion{min-width:0;display:flex;flex-direction:column;gap:5px}
+.play-promotion strong{font-size:21px;line-height:1.2;letter-spacing:-.5px}
+.play-promotion span{font-size:16px;line-height:1.3;color:#675183}
+.play-task-card .play-promotion span{color:#946946}
+[data-banner="health"] .play-promotion span{color:#4b7966}
+.play-promotion-art{height:100%;min-width:0;display:grid;place-items:center}
+.play-service-stack .play-promotion-art .visual-art{width:100%;height:100%;object-fit:contain;border-radius:8px}
+.play-card-footer{height:12px;display:flex;align-items:center;justify-content:center;font-size:14px;line-height:14px;color:#8d6b58}
+.play-card-footer .dots{margin:0;gap:8px}
+.play-card-footer .dot{width:10px;height:10px}
