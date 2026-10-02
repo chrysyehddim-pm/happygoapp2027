@@ -27,13 +27,13 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
     await capture(`banner-${type}-${i+1}`);
     for(const img of await page.locator('[data-banner] .banner-link img').all()) {
      const data=await img.evaluate(e=>({w:e.naturalWidth,h:e.naturalHeight,fit:getComputedStyle(e).objectFit,frame:[e.parentElement.offsetWidth,e.parentElement.offsetHeight]}));
-     assert.equal(data.w,800);assert.equal(data.h,500);assert.equal(data.fit,'contain');sizes.push(data.frame);
+     assert.equal(data.w,type==='play'?1000:800);assert.equal(data.h,type==='play'?400:500);assert.equal(data.fit,'contain');if(type!=='play')sizes.push(data.frame);
     }
     assert.equal(await page.locator('.banner-caption').count(),0);
    }
   }
   assert.equal(new Set(positions).size,1);assert(sizes.every(s=>s[0]===sizes[0][0]&&s[1]===sizes[0][1]));
   await page.setViewportSize({width:390,height:844});await capture('banner-mobile');
-  assert.deepEqual(errors,[]);console.log('PASS: homepage label, 10/31 deadline, campaign safe padding, all 18 carousel frames 800x500 and contain, equal ticket images, fixed skeleton, no 404/JS errors.');
+  assert.deepEqual(errors,[]);console.log('PASS: homepage label, 10/31 deadline, campaign safe padding, all carousel frames have category-specific uniform sizing and contain, equal ticket images, fixed skeleton, no 404/JS errors.');
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

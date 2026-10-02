@@ -1,0 +1,45 @@
+{
+  "method": "built-in imagegen",
+  "assets": [
+    {
+      "name": "play-task",
+      "prompt": "Use case: stylized-concept. App compact horizontal card illustration, landscape 5:2 ratio. A premium iced latte cup with a small birthday gift, cream peach background. Polished playful 3D illustration matching modern HAPPY GO rewards app. Simple single central visual cluster, minimal details readable at small size. Entire objects inside central 70% canvas with generous safety margins, full background edge to edge. No text, no letters, no logo, no buttons, no UI, no border. One illustration only.",
+      "path": "assets/visual/play-task.png"
+    },
+    {
+      "name": "play-game-1",
+      "prompt": "Use case: stylized-concept. App compact horizontal card illustration, landscape 5:2 ratio. A colorful game controller and coins, lavender purple background. Polished playful 3D illustration matching modern HAPPY GO rewards app. Simple single central visual cluster, minimal details readable at small size. Entire objects inside central 70% canvas with generous safety margins, full background edge to edge. No text, no letters, no logo, no buttons, no UI, no border. One illustration only.",
+      "path": "assets/visual/play-game-1.png"
+    },
+    {
+      "name": "play-game-2",
+      "prompt": "Use case: stylized-concept. App compact horizontal card illustration, landscape 5:2 ratio. A game quest treasure chest and small stars, lavender blue background. Polished playful 3D illustration matching modern HAPPY GO rewards app. Simple single central visual cluster, minimal details readable at small size. Entire objects inside central 70% canvas with generous safety margins, full background edge to edge. No text, no letters, no logo, no buttons, no UI, no border. One illustration only.",
+      "path": "assets/visual/play-game-2.png"
+    },
+    {
+      "name": "play-game-3",
+      "prompt": "Use case: stylized-concept. App compact horizontal card illustration, landscape 5:2 ratio. A playful arcade console with coins, purple blue background. Polished playful 3D illustration matching modern HAPPY GO rewards app. Simple single central visual cluster, minimal details readable at small size. Entire objects inside central 70% canvas with generous safety margins, full background edge to edge. No text, no letters, no logo, no buttons, no UI, no border. One illustration only.",
+      "path": "assets/visual/play-game-3.png"
+    },
+    {
+      "name": "play-health-1",
+      "prompt": "Use case: stylized-concept. App compact horizontal card illustration, landscape 5:2 ratio. A friendly brain and puzzle pieces, mint aqua background. Polished playful 3D illustration matching modern HAPPY GO rewards app. Simple single central visual cluster, minimal details readable at small size. Entire objects inside central 70% canvas with generous safety margins, full background edge to edge. No text, no letters, no logo, no buttons, no UI, no border. One illustration only.",
+      "path": "assets/visual/play-health-1.png"
+    },
+    {
+      "name": "play-health-2",
+      "prompt": "Use case: stylized-concept. App compact horizontal card illustration, landscape 5:2 ratio. An open health learning book with brain and puzzle, mint background. Polished playful 3D illustration matching modern HAPPY GO rewards app. Simple single central visual cluster, minimal details readable at small size. Entire objects inside central 70% canvas with generous safety margins, full background edge to edge. No text, no letters, no logo, no buttons, no UI, no border. One illustration only.",
+      "path": "assets/visual/play-health-2.png"
+    },
+    {
+      "name": "play-health-3",
+      "prompt": "Use case: stylized-concept. App compact horizontal card illustration, landscape 5:2 ratio. A memory matching game with brain and cards, mint aqua background. Polished playful 3D illustration matching modern HAPPY GO rewards app. Simple single central visual cluster, minimal details readable at small size. Entire objects inside central 70% canvas with generous safety margins, full background edge to edge. No text, no letters, no logo, no buttons, no UI, no border. One illustration only.",
+      "path": "assets/visual/play-health-3.png"
+    },
+    {
+      "name": "invoice-warrior",
+      "prompt": "Use case: stylized-concept. Generate a single static full-body female invoice forest warrior sprite using the supplied female image as character reference. Pixel-art chibi elf, orange long segmented braided high ponytail, amber eyes, pointed ears, green leafy floral costume, brown boots. Friendly upright pose. Keep entire ponytail, ears, hands and both boots fully visible with at least 10% safety margin on every side. Clean sharp pixel-art, transparent background. No text, no UI, no panels, no animation.",
+      "path": "assets/visual/invoice-warrior.png"
+    }
+  ]
+}
