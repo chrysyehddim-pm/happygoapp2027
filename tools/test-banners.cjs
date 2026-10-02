@@ -27,7 +27,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
     await capture(`banner-${type}-${i+1}`);
     for(const img of await page.locator('[data-banner] .banner-link img').all()) {
      const data=await img.evaluate(e=>({w:e.naturalWidth,h:e.naturalHeight,fit:getComputedStyle(e).objectFit,frame:[e.parentElement.offsetWidth,e.parentElement.offsetHeight]}));
-     assert.equal(data.w,type==='play'?1000:800);assert.equal(data.h,type==='play'?400:500);assert.equal(data.fit,'contain');if(type!=='play')sizes.push(data.frame);
+     assert.equal(data.w,type==='play'?1000:800);assert.equal(data.h,type==='play'?360:500);assert.equal(data.fit,'contain');if(type!=='play')sizes.push(data.frame);
     }
     assert.equal(await page.locator('.banner-caption').count(),0);
    }

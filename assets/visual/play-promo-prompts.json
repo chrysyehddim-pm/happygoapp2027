@@ -1,0 +1,44 @@
+{
+  "method": "built-in imagegen",
+  "size": [
+    1000,
+    360
+  ],
+  "assets": [
+    {
+      "name": "play-task-promo",
+      "path": "assets/visual/play-task-promo.png",
+      "prompt": "Use case: ads-marketing. Edit this reference illustration into ONE finished promotional banner, wide landscape ratio 25:9, full bleed background. Preserve its existing subject, polished playful 3D style, colors and identity; recompose main artwork at RIGHT 30% area, keep full object visible. At LEFT 60% integrate very large bold Traditional Chinese headline exactly \"發票壽星禮\" and clear subtitle exactly \"大杯拿鐵限量搶\". Typography colors: deep warm brown on peach. All text must be rasterized IN the image, clear correctly spelled Traditional Chinese, designed to be readable as a small mobile card. Title should occupy most available height, subtitle below, no other copy. For the first game banner split headline into two lines as specified; other headlines single line if possible. Keep all important letters, entire subject and subtitle inside 8% edge safety margins. Background fills edges. No buttons, no UI, no extra logo, no watermark, no multi-panel layout. Make harmonious professionally composed typography and artwork matching other HAPPY GO promotional banners. Do NOT make a textless illustration."
+    },
+    {
+      "name": "play-game-1-promo",
+      "path": "assets/visual/play-game-1-promo.png",
+      "prompt": "Use case: ads-marketing. Edit this reference illustration into ONE finished promotional banner, wide landscape ratio 25:9, full bleed background. Preserve its existing subject, polished playful 3D style, colors and identity; recompose main artwork at RIGHT 30% area, keep full object visible. At LEFT 60% integrate very large bold Traditional Chinese headline exactly \"玩遊戲\n點數兩倍贈\" and clear subtitle exactly \"完成任務，賺點更有感\". Typography colors: white and yellow on purple. All text must be rasterized IN the image, clear correctly spelled Traditional Chinese, designed to be readable as a small mobile card. Title should occupy most available height, subtitle below, no other copy. For the first game banner split headline into two lines as specified; other headlines single line if possible. Keep all important letters, entire subject and subtitle inside 8% edge safety margins. Background fills edges. No buttons, no UI, no extra logo, no watermark, no multi-panel layout. Make harmonious professionally composed typography and artwork matching other HAPPY GO promotional banners. Do NOT make a textless illustration."
+    },
+    {
+      "name": "play-game-2-promo",
+      "path": "assets/visual/play-game-2-promo.png",
+      "prompt": "Use case: ads-marketing. Edit this reference illustration into ONE finished promotional banner, wide landscape ratio 25:9, full bleed background. Preserve its existing subject, polished playful 3D style, colors and identity; recompose main artwork at RIGHT 30% area, keep full object visible. At LEFT 60% integrate very large bold Traditional Chinese headline exactly \"限時遊戲任務\" and clear subtitle exactly \"探索挑戰，完成任務\". Typography colors: white and yellow on violet blue. All text must be rasterized IN the image, clear correctly spelled Traditional Chinese, designed to be readable as a small mobile card. Title should occupy most available height, subtitle below, no other copy. For the first game banner split headline into two lines as specified; other headlines single line if possible. Keep all important letters, entire subject and subtitle inside 8% edge safety margins. Background fills edges. No buttons, no UI, no extra logo, no watermark, no multi-panel layout. Make harmonious professionally composed typography and artwork matching other HAPPY GO promotional banners. Do NOT make a textless illustration."
+    },
+    {
+      "name": "play-game-3-promo",
+      "path": "assets/visual/play-game-3-promo.png",
+      "prompt": "Use case: ads-marketing. Edit this reference illustration into ONE finished promotional banner, wide landscape ratio 25:9, full bleed background. Preserve its existing subject, polished playful 3D style, colors and identity; recompose main artwork at RIGHT 30% area, keep full object visible. At LEFT 60% integrate very large bold Traditional Chinese headline exactly \"探索新遊戲\" and clear subtitle exactly \"找到你的下一個樂趣\". Typography colors: white and yellow on violet blue. All text must be rasterized IN the image, clear correctly spelled Traditional Chinese, designed to be readable as a small mobile card. Title should occupy most available height, subtitle below, no other copy. For the first game banner split headline into two lines as specified; other headlines single line if possible. Keep all important letters, entire subject and subtitle inside 8% edge safety margins. Background fills edges. No buttons, no UI, no extra logo, no watermark, no multi-panel layout. Make harmonious professionally composed typography and artwork matching other HAPPY GO promotional banners. Do NOT make a textless illustration."
+    },
+    {
+      "name": "play-health-1-promo",
+      "path": "assets/visual/play-health-1-promo.png",
+      "prompt": "Use case: ads-marketing. Edit this reference illustration into ONE finished promotional banner, wide landscape ratio 25:9, full bleed background. Preserve its existing subject, polished playful 3D style, colors and identity; recompose main artwork at RIGHT 30% area, keep full object visible. At LEFT 60% integrate very large bold Traditional Chinese headline exactly \"首玩加碼\" and clear subtitle exactly \"動腦挑戰，健康有伴\". Typography colors: deep green and warm orange on mint. All text must be rasterized IN the image, clear correctly spelled Traditional Chinese, designed to be readable as a small mobile card. Title should occupy most available height, subtitle below, no other copy. For the first game banner split headline into two lines as specified; other headlines single line if possible. Keep all important letters, entire subject and subtitle inside 8% edge safety margins. Background fills edges. No buttons, no UI, no extra logo, no watermark, no multi-panel layout. Make harmonious professionally composed typography and artwork matching other HAPPY GO promotional banners. Do NOT make a textless illustration."
+    },
+    {
+      "name": "play-health-2-promo",
+      "path": "assets/visual/play-health-2-promo.png",
+      "prompt": "Use case: ads-marketing. Edit this reference illustration into ONE finished promotional banner, wide landscape ratio 25:9, full bleed background. Preserve its existing subject, polished playful 3D style, colors and identity; recompose main artwork at RIGHT 30% area, keep full object visible. At LEFT 60% integrate very large bold Traditional Chinese headline exactly \"健康小學堂\" and clear subtitle exactly \"動腦挑戰，健康有伴\". Typography colors: deep green on mint. All text must be rasterized IN the image, clear correctly spelled Traditional Chinese, designed to be readable as a small mobile card. Title should occupy most available height, subtitle below, no other copy. For the first game banner split headline into two lines as specified; other headlines single line if possible. Keep all important letters, entire subject and subtitle inside 8% edge safety margins. Background fills edges. No buttons, no UI, no extra logo, no watermark, no multi-panel layout. Make harmonious professionally composed typography and artwork matching other HAPPY GO promotional banners. Do NOT make a textless illustration."
+    },
+    {
+      "name": "play-health-3-promo",
+      "path": "assets/visual/play-health-3-promo.png",
+      "prompt": "Use case: ads-marketing. Edit this reference illustration into ONE finished promotional banner, wide landscape ratio 25:9, full bleed background. Preserve its existing subject, polished playful 3D style, colors and identity; recompose main artwork at RIGHT 30% area, keep full object visible. At LEFT 60% integrate very large bold Traditional Chinese headline exactly \"每天動腦\" and clear subtitle exactly \"開啟你的健康時光\". Typography colors: deep green on mint. All text must be rasterized IN the image, clear correctly spelled Traditional Chinese, designed to be readable as a small mobile card. Title should occupy most available height, subtitle below, no other copy. For the first game banner split headline into two lines as specified; other headlines single line if possible. Keep all important letters, entire subject and subtitle inside 8% edge safety margins. Background fills edges. No buttons, no UI, no extra logo, no watermark, no multi-panel layout. Make harmonious professionally composed typography and artwork matching other HAPPY GO promotional banners. Do NOT make a textless illustration."
+    }
+  ]
+}
