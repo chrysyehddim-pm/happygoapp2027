@@ -20,7 +20,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
  assert.notEqual(await page.locator('.forest-entry').evaluate(e=>getComputedStyle(e).boxShadow),'none');
  await page.screenshot({path:path.resolve('test-results/forest-desktop.png')});
  await act('invoice-forest');assert.equal(await page.locator('.forest-panel').count(),1);await act('invoice');assert.match(await page.locator('.invoice-panel').innerText(),/手機條碼載具/);await act('back');await act('back');
- await act('birthday-info');assert.match(await page.locator('#overlay').innerText(),/發票壽星禮/);await act('close');await act('games');assert.match(await page.locator('.topbar').innerText(),/遊戲樂園/);await act('back');await act('health');assert.match(await page.locator('.topbar').innerText(),/GO HEALTH/);await act('back');
+ await act('daily-task-info');assert.match(await page.locator('#overlay').innerText(),/點數補給計畫/);await act('close');await act('games');assert.match(await page.locator('.topbar').innerText(),/遊戲樂園/);await act('back');await act('health');assert.match(await page.locator('.topbar').innerText(),/GO HEALTH/);await act('back');
  await page.setViewportSize({width:390,height:844});await decode();await page.screenshot({path:path.resolve('test-results/forest-mobile.png')});assert(await page.locator('#phone').evaluate(e=>e.getBoundingClientRect().right<=innerWidth+1));
  assert.deepEqual(errors,[]);console.log('PASS: forest entry and return, original service journeys, six compact carousel assets, safe bounds, fixed skeleton, mobile, no errors.');
  }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,0 +1,24 @@
+const assert=require('assert/strict'),path=require('path');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.BROWSER_EXECUTABLE});try{
+ const page=await browser.newPage({viewport:{width:390,height:844}}),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});
+ await page.clock.install();const act=async a=>page.locator(`[data-action="${a}"]`).first().click();
+ const enter=async()=>{await page.locator('#restart').click();await act('selection');await act('choose-play');};
+ const peek=()=>page.locator('.ai-fab').evaluate(e=>e.classList.contains('peeking'));
+ const advance=ms=>page.clock.runFor(ms);
+ await page.goto(process.env.DEMO_URL||'http://127.0.0.1:4174/');await act('selection');await act('choose-play');
+ assert.match(await page.locator('.play-task-card img').getAttribute('src'),/task-points-supply/);assert.match(await page.locator('.play-task-card img').getAttribute('alt'),/30點/);
+ await page.evaluate(()=>{window.reminderPeaks=0;let active=false;const fab=document.querySelector('.ai-fab');new MutationObserver(()=>{const next=fab.classList.contains('peeking');if(next&&!active)window.reminderPeaks++;active=next;}).observe(fab,{attributes:true,attributeFilter:['class']});});
+ await advance(4001);assert(await page.locator('.ai-fab').evaluate(e=>e.classList.contains('collapsed')));assert.equal(await peek(),false);
+ await advance(10000);assert.equal(await peek(),true);assert.equal(await page.locator('.ai-fab').evaluate(e=>getComputedStyle(e).animationName),'ai-side-peek');
+ await advance(1200);assert.equal(await peek(),false);await advance(10000);assert.equal(await peek(),true);await advance(1200);await advance(10000);assert.equal(await peek(),true);await advance(1200);await advance(40000);assert.equal(await peek(),false);assert.equal(await page.evaluate(()=>window.reminderPeaks),3);
+ await enter();await advance(4001);await advance(9000);await page.locator('.greeting').click();await advance(2000);assert.equal(await peek(),false);await advance(8001);assert.equal(await peek(),true);
+ await act('eggs');assert.equal(await peek(),false);await advance(20000);assert.equal(await peek(),false);await act('close');await advance(9900);assert.equal(await peek(),false);await advance(101);assert.equal(await peek(),true);
+ await act('ai');assert.equal(await page.locator('.category').count(),1);assert.equal(await peek(),false);await act('ai');assert.equal(await page.locator('#ai-text').count(),1);await advance(30000);assert.equal(await page.locator('.ai-fab').count(),0);
+ await enter();await advance(4001);await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'));});await advance(20000);assert.equal(await peek(),false);await page.evaluate(()=>{delete document.hidden;document.dispatchEvent(new Event('visibilitychange'));});await advance(10001);assert.equal(await peek(),true);
+ await page.emulateMedia({reducedMotion:'reduce'});assert.equal(await peek(),false);await advance(40000);assert.equal(await peek(),false);
+ await act('daily-task-info');assert.match(await page.locator('#overlay').innerText(),/完成指定任務贈30點/);assert.doesNotMatch(await page.locator('#overlay').innerText(),/大杯拿鐵|發票壽星/);await act('daily-task-go');assert.match(await page.locator('.topbar').innerText(),/點數補給計畫/);await act('back');
+ await page.evaluate(()=>Promise.all([...document.images].map(i=>i.decode())));await page.screenshot({path:path.resolve('test-results/ai-reminders-mobile.png')});
+ assert.deepEqual(errors,[]);console.log('PASS: initial 4s collapse, 10s/1.2s reminder cycle, three reminder cap, interaction deferral, modal/visibility/navigation pause, AI entry, reduced motion, supplied task artwork and 30-point explanation, no errors.');
+ }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

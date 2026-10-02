@@ -306,3 +306,10 @@
 .ticket-footer .points{margin-right:auto;color:#ff6714;font-size:27px;font-weight:850;line-height:34px}
 .ticket-footer .small-cta{padding:6px 18px;font-size:21px;line-height:24px}
 .life-grid>.tile[data-banner] .banner-link{height:159px;aspect-ratio:8 / 5}
+
+/* Brief side reminders run only while the AI entry is idle and collapsed. */
+.ai-fab.collapsed.peeking{animation:ai-side-peek 1.2s ease-in-out;opacity:1}
+@keyframes ai-side-peek{0%,100%{transform:translateX(58px) rotate(0)}25%{transform:translateX(34px) rotate(-4deg)}42%{transform:translateX(34px) rotate(4deg)}60%{transform:translateX(34px) rotate(-2deg)}75%{transform:translateX(34px) rotate(0)}}
+.play-service-stack .play-task-card .banner-link{background:#214519}
+.service-promo-art{height:220px;margin:24px 0}
+.service-promo-art>.visual-art{object-fit:contain}
