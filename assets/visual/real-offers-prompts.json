@@ -1,0 +1,41 @@
+{
+  "method": "Built-in imagegen edits of user supplied JPGs; proportional resize to 800x500",
+  "images": [
+    {
+      "name": "shop-offer-anniversary",
+      "source": "周年慶.jpg",
+      "prompt": "Edit the supplied original marketing banner as the edit target, faithfully preserve its recognizable design and content. Deliver a single landscape 8:5 banner, edge-to-edge artwork suitable for final 800x500 display. Recompose or gently extend background to fit; never stretch subjects, never use flat padding bars, no collage of multiple banners. Keep every headline, date, logo and key object wholly inside a 5% safety margin. Improve mobile legibility but avoid major redesign. Preserve gold yellow rays, original gift and SOGO coupon and typography style. Exact main wording:「週年慶」「限時加碼 最終波」「搶100點」「再抽5,000百貨禮券」. Preserve the coupon's $5000 and 遠東SOGO branding.",
+      "final": "assets/visual/shop-offer-anniversary.png"
+    },
+    {
+      "name": "shop-offer-tea",
+      "source": "茶湯會.jpg",
+      "prompt": "Edit the supplied original marketing banner as the edit target, faithfully preserve its recognizable design and content. Deliver a single landscape 8:5 banner, edge-to-edge artwork suitable for final 800x500 display. Recompose or gently extend background to fit; never stretch subjects, never use flat padding bars, no collage of multiple banners. Keep every headline, date, logo and key object wholly inside a 5% safety margin. Improve mobile legibility but avoid major redesign. Preserve actual two tea drinks photography, 茶湯會 calligraphy logo and dark olive atmosphere. Exact wording:「2026/9/1-10/31」「HAPPY GO 會員獨享」「金桂系列 任2杯88折」. Do not change product identities.",
+      "final": "assets/visual/shop-offer-tea.png"
+    },
+    {
+      "name": "shop-offer-dome",
+      "source": "大巨蛋.jpg",
+      "prompt": "Edit the supplied original marketing banner as the edit target, faithfully preserve its recognizable design and content. Deliver a single landscape 8:5 banner, edge-to-edge artwork suitable for final 800x500 display. Recompose or gently extend background to fit; never stretch subjects, never use flat padding bars, no collage of multiple banners. Keep every headline, date, logo and key object wholly inside a 5% safety margin. Improve mobile legibility but avoid major redesign. Keep pastel green and pink flower composition, original woman in pink dress, and original brand wording「遠東 Garden City 大巨蛋店」. Lightly improve text crispness and layout for small mobile banner. Preserve「GRAND OPENING」「9/16(三)～10/4(日)」. No new offer.",
+      "final": "assets/visual/shop-offer-dome.png"
+    },
+    {
+      "name": "life-offer-biccamera",
+      "source": "BIGCAMERA回饋.jpg",
+      "prompt": "Edit the supplied original marketing banner as the edit target, faithfully preserve its recognizable design and content. Deliver a single landscape 8:5 banner, edge-to-edge artwork suitable for final 800x500 display. Recompose or gently extend background to fit; never stretch subjects, never use flat padding bars, no collage of multiple banners. Keep every headline, date, logo and key object wholly inside a 5% safety margin. Improve mobile legibility but avoid major redesign. Keep original BicCamera KOJIMA and HAPPY GO logos, white/red split composition, electronics and beauty product imagery. Make full confirmed offers readable: left「COUPON!」「10% TAX FREE」「部分商品消費稅為8%」; right「7% OFF」electronics and「5% OFF」with「藥品 化妝品」. IMPORTANT replace old expiry with exact clearly readable「有效期限 2026/10/31」inside bottom safe area. Do not invent the partially cut off extra content at bottom, only show the confirmed 10%, 7%, 5% offers. Retain original branded visual character.",
+      "final": "assets/visual/life-offer-biccamera.png"
+    },
+    {
+      "name": "life-offer-books",
+      "source": "金石堂.jpg",
+      "prompt": "Edit the supplied original marketing banner as the edit target, faithfully preserve its recognizable design and content. Deliver a single landscape 8:5 banner, edge-to-edge artwork suitable for final 800x500 display. Recompose or gently extend background to fit; never stretch subjects, never use flat padding bars, no collage of multiple banners. Keep every headline, date, logo and key object wholly inside a 5% safety margin. Improve mobile legibility but avoid major redesign. Keep yellow green colors, 金石堂 logo and original teal-haired headphone cartoon girl. Lightly reorganize visual hierarchy for mobile clarity while keeping offers and original style. Text「1,200點」「文化幣」「年中聰明用！」「7.1–11.30」「會員使用文化幣消費」「不限點數」「滿$500送$200電子禮券」. Keep HAPPY GO footer wording「消費100元累積1點，每4點折抵1元」. Don't invent small unreadable terms.",
+      "final": "assets/visual/life-offer-books.png"
+    },
+    {
+      "name": "life-offer-saily",
+      "source": "saily.jpg",
+      "prompt": "Edit the supplied original marketing banner as the edit target, faithfully preserve its recognizable design and content. Deliver a single landscape 8:5 banner, edge-to-edge artwork suitable for final 800x500 display. Recompose or gently extend background to fit; never stretch subjects, never use flat padding bars, no collage of multiple banners. Keep every headline, date, logo and key object wholly inside a 5% safety margin. Improve mobile legibility but avoid major redesign. Preserve Saily × HAPPY GO logo wording, yellow ticket design, blue Greek coastal photography and original woman on right. Exact wording「卡友專屬」「全球 eSIM」「85折」「回填再送100點」「全球出國 eSIM 卡友限定禮遇」. Faithfully preserve style, no additional offer.",
+      "final": "assets/visual/life-offer-saily.png"
+    }
+  ]
+}
