@@ -1,0 +1,33 @@
+{
+  "method": "Built-in imagegen edit; normalize to target image dimensions",
+  "images": [
+    {
+      "name": "shopping-fullbleed",
+      "source": "shopping-safe.png",
+      "ratio": "8:5",
+      "prompt": "Edit supplied banner as edit target. Faithful modest layout adjustment, same recognisable design, no new offers or objects. Deliver landscape 8:5 final banner, artwork/background filling the entire rectangular canvas, NO outside padding, NO pre-rendered rounded corners (CSS will round it), NO borders. All logos, promotional words, key subjects safely inside frame with 5% safety margin. Preserve exact headline「生活每一筆 都值得被回饋」, original purple/gold palette, HAPPY GO shopping bag, gold coin, burger, product imagery. Remove baked outer lavender padding and white corners, extend original purple background edge-to-edge. Keep original style.",
+      "final": "assets/visual/shopping-fullbleed.png"
+    },
+    {
+      "name": "utag-fullbleed",
+      "source": "utag-safe.png",
+      "ratio": "8:5",
+      "prompt": "Edit supplied banner as edit target. Faithful modest layout adjustment, same recognisable design, no new offers or objects. Deliver landscape 8:5 final banner, artwork/background filling the entire rectangular canvas, NO outside padding, NO pre-rendered rounded corners (CSS will round it), NO borders. All logos, promotional words, key subjects safely inside frame with 5% safety margin. Preserve「行車生活好康」「點數折抵，出行更輕鬆」「立即查看」, original car, tollgate, city/green background and typography. Remove baked mintpadding andwhitecornerareas, extend artwork edge-to-edge.",
+      "final": "assets/visual/utag-fullbleed.png"
+    },
+    {
+      "name": "ticket-event-fullbleed",
+      "source": "ticket-event-safe.png",
+      "ratio": "10:7",
+      "prompt": "Edit supplied banner as edit target. Faithful modest layout adjustment, same recognisable design, no new offers or objects. Deliver landscape 10:7 final banner, artwork/background filling the entire rectangular canvas, NO outside padding, NO pre-rendered rounded corners (CSS will round it), NO borders. All logos, promotional words, key subjects safely inside frame with 5% safety margin. Preserve exact Chinese wording「累積兌點滿240點」「贈10點」, pink giftbox and goldPcoin, heartsandconfetti. Recompose square pink artwork as landscape10:7, extend pink background to all edges, remove pale empty margins and whitecorners. Keep headlines completely visible.",
+      "final": "assets/visual/ticket-event-fullbleed.png"
+    },
+    {
+      "name": "coco-fullbleed",
+      "source": "coco-safe.png",
+      "ratio": "10:7",
+      "prompt": "Edit supplied banner as edit target. Faithful modest layout adjustment, same recognisable design, no new offers or objects. Deliver landscape 10:7 final banner, artwork/background filling the entire rectangular canvas, NO outside padding, NO pre-rendered rounded corners (CSS will round it), NO borders. All logos, promotional words, key subjects safely inside frame with 5% safety margin. Preserve CoCo 都可 branding on original pearl milk drink, original beige warm photo background. Reframe original photo as10:7 landscape, cup whole inside frame, extend photographic background to edges, remove empty exterior beigepadding andwhitecorners. Noaddedtext.",
+      "final": "assets/visual/coco-fullbleed.png"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "method": "Built-in imagegen background removal",
+  "source": "egg-gift.png",
+  "final": "assets/visual/egg-gift-transparent.png",
+  "prompt": "Edit target: supplied purple gift box image. Remove ONLY the pale purple/white rectangular background and glow backdrop, replacing it with genuine transparent alpha. Preserve purple 3D gift box, gold ribbon and bow, gold sparkles/stars, original tilt, colors and glossy rendering. Recover full bow and stars with a small transparent margin so nothing is clipped. No new text or objects. Landscape canvas approximately 1.88:1. Output transparent PNG cutout."
+}

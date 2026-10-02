@@ -315,3 +315,19 @@
 .play-service-stack .play-task-card .banner-link{background:transparent;aspect-ratio:16 / 7;height:auto;align-self:center}
 .service-promo-art{height:220px;margin:24px 0}
 .service-promo-art>.visual-art{object-fit:contain}
+
+/* Fit image frames to asset ratios: full artwork, rounded edges, no letterboxing. */
+.tile[data-banner] .banner-link,.life-grid>.tile[data-banner] .banner-link{width:100%;height:auto;aspect-ratio:8 / 5;align-self:center;background:transparent}
+.play-service-stack .tile[data-banner] .banner-link{height:auto;aspect-ratio:25 / 9;align-self:center}
+.ticket-combined{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ticket-pane{grid-template-rows:30px auto 22px 32px;gap:6px}
+.ticket-banner{height:auto;aspect-ratio:10 / 7;background:transparent}
+.play-service-stack .play-task-card{padding:12px;grid-template-rows:28px minmax(0,1fr) 18px;gap:7px}
+.play-service-stack .play-task-card h2{height:28px;line-height:28px}
+.play-service-stack .play-task-card .banner-link{width:92%;height:auto;aspect-ratio:16 / 7;justify-self:center;align-self:center}
+.play-task-card .play-card-footer{height:18px;line-height:18px}
+
+/* Strip baked upload padding without hiding the inner banner artwork. */
+.banner-link:has(img[src$="shopping-2.png"])>.visual-art,.banner-link:has(img[src$="shopping-3.png"])>.visual-art,.banner-link:has(img[src$="utag-2.png"])>.visual-art,.banner-link:has(img[src$="utag-3.png"])>.visual-art{position:absolute;left:-3.476%;top:-3.419%;width:106.952%;height:106.838%;border-radius:0}
+.play-service-stack .tile[data-banner] .banner-link>.visual-art{position:absolute;left:-2%;top:-2%;width:104%;height:104%;border-radius:0}
+.egg-art>.visual-art{object-fit:contain}
