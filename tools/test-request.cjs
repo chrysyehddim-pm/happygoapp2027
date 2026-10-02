@@ -12,7 +12,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
   assert.match(await page.locator('.section-label').innerText(),/^消費加碼活動\s+今日精選$/);
   assert.match(await page.locator('.campaign-info h3').innerText(),/消費滿7筆贈100點/);
   assert.match(await page.locator('.progress-value').innerText(),/2\s*／\s*7 筆/);
-  assert.match(await page.locator('.campaign-art img').getAttribute('src'),/campaign-consumption/);
+  assert.match(await page.locator('.campaign-art img').getAttribute('src'),/campaign-redpacket/);
   const width=await page.locator('.progress').evaluate(e=>e.firstElementChild.getBoundingClientRect().width/e.getBoundingClientRect().width);
   assert(Math.abs(width-2/7)<.01);
   await act('campaign-progress');assert.match(await page.locator('#overlay').innerText(),/2／7 筆，還差 5 筆/);await act('close');
@@ -26,7 +26,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
    assert(gap>=25,`Bottom label whitespace: ${gap}`);
   }
   assert.equal(new Set(positions).size,1);
-  assert.equal(await page.locator('.life-grid .tile h2').first().innerText(),'兌點加碼活動');
+  assert.equal(await page.locator('.ticket-pane h2').first().innerText(),'兌點加碼活動');
   await act('ticket-event');assert.match(await page.locator('#overlay h2').innerText(),/兌點加碼活動/);await act('close');
   await capture('requested-lifestyle');await act('eggs');await act('egg-task');
   assert.equal(await page.locator('.task-list-art image').count(),1);

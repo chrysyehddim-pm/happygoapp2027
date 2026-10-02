@@ -281,3 +281,26 @@
 .forest-entry::before{content:'';position:absolute;inset:3px 5px auto;height:38%;border-radius:13px 13px 8px 8px;background:linear-gradient(180deg,#e9ffb538,#ffffff00);pointer-events:none}
 .forest-entry:active{transform:translateY(3px);box-shadow:0 3px 0 #19472f,0 5px 8px #184a3226,inset 0 2px 0 #efffc740}
 .forest-entry:focus-visible{outline:3px solid #e9bc65;outline-offset:4px}
+
+/* Category-specific uploaded tool icons, full character, unified ticket container. */
+.play-service-grid{grid-template-columns:272px minmax(0,1fr)}
+.warrior-stage>.visual-art:last-child{inset:auto;top:0;left:52.5%;width:172%;height:100%;transform:translateX(-50%);object-fit:contain}
+.category .tool-circle,.category .tool-grid button:first-child .tool-circle{width:76px;height:76px;background:transparent;border-radius:0}
+.tool-circle>.visual-art{object-fit:contain;border-radius:0}
+.tool-grid button{display:flex;flex-direction:column;align-items:center;gap:8px}
+.tool-label{font-size:20px;line-height:28px;white-space:nowrap}
+.category .tool-grid{margin-top:10px}
+.service-tool-art{height:180px;margin:24px auto;width:180px}
+.service-tool-art>.visual-art{object-fit:contain}
+.campaign-art{background:#fff1f5}
+.ticket-combined{grid-column:1/-1;height:326px;padding:18px;display:grid;grid-template-columns:1.15fr 1fr;gap:16px;border-radius:24px;background:linear-gradient(120deg,#fff0f5,#fff8fb);border:1px solid #fff}
+.ticket-pane{display:grid;grid-template-rows:30px 176px 22px 36px;gap:8px;min-width:0}
+.ticket-pane h2{margin:0;font-size:26px;line-height:30px;color:#29008e;font-weight:850;display:flex;align-items:center;justify-content:space-between;white-space:nowrap}
+.ticket-pane h2 small{font-size:15px;font-weight:500;color:#ed791b;border:1px solid #ffddbc;border-radius:20px;padding:3px 7px;background:#fff8ed}
+.ticket-banner{width:100%;height:176px;overflow:hidden;padding:0;border-radius:14px;background:#fff1f5}
+.ticket-banner>.visual-art{object-fit:contain;border-radius:14px}
+.ticket-description{font-size:18px;line-height:22px;color:#51425f;white-space:nowrap}
+.ticket-footer{display:flex;align-items:center;justify-content:flex-end;gap:12px}
+.ticket-footer .points{margin-right:auto;color:#ff6714;font-size:27px;font-weight:850;line-height:34px}
+.ticket-footer .small-cta{padding:6px 18px;font-size:21px;line-height:24px}
+.life-grid>.tile[data-banner] .banner-link{height:159px;aspect-ratio:8 / 5}

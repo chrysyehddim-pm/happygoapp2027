@@ -19,8 +19,8 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
    positions.push(await page.locator('.egg').evaluate(e=>e.offsetTop));
    if(type==='life') {
     await page.evaluate(async()=>Promise.all([...document.images].map(i=>i.decode().catch(()=>{}))));
-    const top=await page.locator('.life-grid .tile:nth-child(-n+2) .banner-link').evaluateAll(es=>es.map(e=>({w:e.offsetWidth,h:e.offsetHeight,fit:getComputedStyle(e.querySelector('img')).objectFit,natural:[e.querySelector('img').naturalWidth,e.querySelector('img').naturalHeight]})));
-    assert.deepEqual(top[0],top[1]);assert.equal(top[0].fit,'contain');assert.deepEqual(top[0].natural,[800,560]);
+    const top=await page.locator('.ticket-pane .ticket-banner').evaluateAll(es=>es.map(e=>({w:e.offsetWidth,h:e.offsetHeight,fit:getComputedStyle(e.querySelector('img')).objectFit,natural:[e.querySelector('img').naturalWidth,e.querySelector('img').naturalHeight]})));
+    assert.equal(top[0].h,top[1].h);assert.equal(top[1].fit,'contain');assert.deepEqual(top[1].natural,[800,560]);assert.equal(top[0].fit,'contain');assert.deepEqual(top[0].natural,[800,560]);
    }
    for(let i=0;i<3;i++) {
     for(const tile of await page.locator('[data-banner]').all())await tile.locator(`[data-action="banner-slide"][data-index="${i}"]`).click();
