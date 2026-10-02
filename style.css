@@ -284,7 +284,7 @@
 
 /* Category-specific uploaded tool icons, full character, unified ticket container. */
 .play-service-grid{grid-template-columns:272px minmax(0,1fr)}
-.warrior-stage>.visual-art:last-child{inset:auto;top:0;left:52.5%;width:172%;height:100%;transform:translateX(-50%);object-fit:contain}
+.warrior-stage>.visual-art:last-child{inset:auto;top:7%;left:52.5%;width:155%;height:90%;transform:translateX(-50%);object-fit:contain}
 .category .tool-circle,.category .tool-grid button:first-child .tool-circle{width:76px;height:76px;background:transparent;border-radius:0}
 .tool-circle>.visual-art{object-fit:contain;border-radius:0}
 .tool-grid button{display:flex;flex-direction:column;align-items:center;gap:8px}
