@@ -1,0 +1,6 @@
+{
+  "method": "Built-in imagegen horizontal forest extension; proportional normalize to 1000x360",
+  "source": "task-points-supply-fit.png",
+  "final": "assets/visual/task-points-supply-wide.png",
+  "prompt": "Edit the supplied pixel-art marketing banner. Extend its forest scene horizontally to a wide landscape 25:9 canvas (final 1000x360), without stretching any text, animals or objects. Preserve original pixel-art style, bear on left, rabbit and fox on right, gold chest, forest and castle, exact traditional Chinese headline「點數補給計畫！」and subtitle「完成任務贈」and「30點」. Keep original central composition and headline readable, add matching trees/forest landscape on both sides as needed. All lettering and animals completely inside a safe margin. Artwork/background fills entire canvas, NO padding bars, NO border, NO pre-rendered rounded corners. No new text or characters; only widen the original background."
+}

@@ -340,3 +340,9 @@
 .two-col>.tile[data-banner] .dot,.life-grid>.tile[data-banner] .dot{width:9px;height:9px}
 .play-service-stack .play-task-card{row-gap:7px;grid-template-rows:28px minmax(0,1fr) 18px}
 .play-service-stack .play-task-card .banner-link{width:auto;height:calc(100% - 8px);max-width:92%;aspect-ratio:16 / 7;align-self:end}
+
+/* The task artwork uses the same full-width banner format as gaming services. */
+.play-service-stack .play-task-card .banner-link{width:100%;max-width:100%;height:auto;aspect-ratio:25 / 9;align-self:end}
+
+.play-service-stack .play-task-card{grid-template-rows:28px minmax(0,1fr) 14px}
+.play-task-card .play-card-footer{height:14px;line-height:14px}
