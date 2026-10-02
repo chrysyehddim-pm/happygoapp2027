@@ -331,3 +331,12 @@
 .banner-link:has(img[src$="shopping-2.png"])>.visual-art,.banner-link:has(img[src$="shopping-3.png"])>.visual-art,.banner-link:has(img[src$="utag-2.png"])>.visual-art,.banner-link:has(img[src$="utag-3.png"])>.visual-art{position:absolute;left:-3.476%;top:-3.419%;width:106.952%;height:106.838%;border-radius:0}
 .play-service-stack .tile[data-banner] .banner-link>.visual-art{position:absolute;left:-2%;top:-2%;width:104%;height:104%;border-radius:0}
 .egg-art>.visual-art{object-fit:contain}
+
+/* Reserve explicit space around compact labels and carousel indicators. */
+.two-col>.tile[data-banner],.life-grid>.tile[data-banner]{display:grid;grid-template-rows:32px minmax(0,1fr) 10px;row-gap:8px;padding:12px 14px 18px}
+.two-col>.tile[data-banner] h2,.life-grid>.tile[data-banner] h2{line-height:32px;margin:0}
+.two-col>.tile[data-banner] .banner-link,.life-grid>.tile[data-banner] .banner-link{width:auto;height:100%;max-width:100%;aspect-ratio:8 / 5;justify-self:center}
+.two-col>.tile[data-banner] .dots,.life-grid>.tile[data-banner] .dots{height:10px;margin:0;align-items:center;gap:8px}
+.two-col>.tile[data-banner] .dot,.life-grid>.tile[data-banner] .dot{width:9px;height:9px}
+.play-service-stack .play-task-card{row-gap:7px;grid-template-rows:28px minmax(0,1fr) 18px}
+.play-service-stack .play-task-card .banner-link{width:auto;height:calc(100% - 8px);max-width:92%;aspect-ratio:16 / 7;align-self:end}

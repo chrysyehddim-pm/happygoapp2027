@@ -17,6 +17,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
   for(const type of ['shop','play','life']) {
    await page.locator(`[data-action="tab"][data-type="${type}"]`).click();
    positions.push(await page.locator('.egg').evaluate(e=>e.offsetTop));
+   if(type!=='play')assert(await page.locator('[data-banner]').evaluateAll(es=>es.every(e=>{const card=e.getBoundingClientRect(),scale=card.width/e.offsetWidth,image=e.querySelector('.banner-link').getBoundingClientRect(),dots=e.querySelector('.dots').getBoundingClientRect(),dot=e.querySelector('.dot');return (dots.top-image.bottom)/scale>=7.9&&(card.bottom-dots.bottom)/scale>=17.9&&dot.offsetWidth===9;})),'Carousel indicators need clear image and bottom spacing');
    if(type==='life') {
     await page.evaluate(async()=>Promise.all([...document.images].map(i=>i.decode().catch(()=>{}))));
     const top=await page.locator('.ticket-pane .ticket-banner').evaluateAll(es=>es.map(e=>({w:e.offsetWidth,h:e.offsetHeight,fit:getComputedStyle(e.querySelector('img')).objectFit,natural:[e.querySelector('img').naturalWidth,e.querySelector('img').naturalHeight]})));
