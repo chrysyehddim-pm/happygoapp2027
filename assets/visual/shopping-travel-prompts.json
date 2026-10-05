@@ -1,0 +1,45 @@
+{
+  "mode": "built-in image_gen",
+  "size": [
+    800,
+    500
+  ],
+  "assets": [
+    {
+      "name": "travel-etag",
+      "source": "C:\\Users\\chrysyeh\\.codex\\generated_images\\01a0f3a4-2bb8-7381-b5be-9d2e316f46f1\\exec-de328340-cb61-4f20-9415-104af0b49a75.png",
+      "prompt": "Use case: compositing. Edit target: attached cropped original campaign artwork. 請將此原活動宣傳圖重新編排為寬800高500像素、8:5比例的橫式banner。保留 uTagGo × HAPPYGO、開車出遊趣、用HAPPYGO點數換國道儲值金！、4點兌換1元，無期限、無上限！、有多少折多少、不用怕點數過期、立即下載uTagGo APP。保留右側手機、藍色車和司機。 保留原本設計語言、品牌標誌形狀、角色產品與優惠数字，不要改為新的活動概念。等比縮放元素，延伸同風格背景以填滿整張，不拉伸、不留白邊框。將重要文案放在離四邊至少6%的安全範圍內，文字清楚易讀，讓300像素寬demo也清楚。只展示活動圖片，去除手機截圖疊加的返回箭頭及右側灰色捲軸。不要加入其他優惠或網頁UI，無圓角（由網站加圓角）。保留所有指定繁體中文字及原品牌英文。",
+      "final": "assets/visual/travel-etag-20261005.png"
+    },
+    {
+      "name": "travel-parking",
+      "source": "C:\\Users\\chrysyeh\\.codex\\generated_images\\01a0f3a4-2bb8-7381-b5be-9d2e316f46f1\\exec-6c192cc1-dae6-4ac7-a553-daddbb7d8d81.png",
+      "prompt": "Use case: compositing. Edit target: attached cropped original campaign artwork. 請將此原活動宣傳圖重新編排為寬800高500像素、8:5比例的橫式banner。保留uTagGo × HAPPYGO、全台路邊＆市區停車、HAPPYGO點數兌換4點、可換1點uTagGo停車金、ETC也適用！、立即前往兌換。保留左側藍車與司機、右側綠色硬幣及城市停車場。 保留原本設計語言、品牌標誌形狀、角色產品與優惠数字，不要改為新的活動概念。等比縮放元素，延伸同風格背景以填滿整張，不拉伸、不留白邊框。將重要文案放在離四邊至少6%的安全範圍內，文字清楚易讀，讓300像素寬demo也清楚。只展示活動圖片，去除手機截圖疊加的返回箭頭及右側灰色捲軸。不要加入其他優惠或網頁UI，無圓角（由網站加圓角）。保留所有指定繁體中文字及原品牌英文。",
+      "final": "assets/visual/travel-parking-20261005.png"
+    },
+    {
+      "name": "travel-dodohome",
+      "source": "C:\\Users\\chrysyeh\\.codex\\generated_images\\01a0f3a4-2bb8-7381-b5be-9d2e316f46f1\\exec-68a912a9-21df-4e23-b5f8-a67caa9f6190.png",
+      "prompt": "Use case: compositing. Edit target: attached cropped original campaign artwork. 請將此原活動宣傳圖重新編排為寬800高500像素、8:5比例的橫式banner。保留嘟嘟房logo、停車也能、兌點折抵、嘟嘟房智慧停車 讓停車更輕鬆、消費滿50元 累計1點、每滿20點 折抵5元。保留白色小車及停車P標誌。 保留原本設計語言、品牌標誌形狀、角色產品與優惠数字，不要改為新的活動概念。等比縮放元素，延伸同風格背景以填滿整張，不拉伸、不留白邊框。將重要文案放在離四邊至少6%的安全範圍內，文字清楚易讀，讓300像素寬demo也清楚。只展示活動圖片，去除手機截圖疊加的返回箭頭及右側灰色捲軸。不要加入其他優惠或網頁UI，無圓角（由網站加圓角）。保留所有指定繁體中文字及原品牌英文。",
+      "final": "assets/visual/travel-dodohome-20261005.png"
+    },
+    {
+      "name": "shop-coupang",
+      "source": "C:\\Users\\chrysyeh\\.codex\\generated_images\\01a0f3a4-2bb8-7381-b5be-9d2e316f46f1\\exec-4f15b5ec-9bbf-4264-a968-9efc7c7ec54b.png",
+      "prompt": "Use case: compositing. Edit target: attached cropped original campaign artwork. 請將此原活動宣傳圖重新編排為寬800高500像素、8:5比例的橫式banner。保留購賺點黑色標籤、coupang原品牌彩色字、夏日酷澎、3%回饋，以及火箭、白色品牌包裹、泳圈及藍天海灘元素。 保留原本設計語言、品牌標誌形狀、角色產品與優惠数字，不要改為新的活動概念。等比縮放元素，延伸同風格背景以填滿整張，不拉伸、不留白邊框。將重要文案放在離四邊至少6%的安全範圍內，文字清楚易讀，讓300像素寬demo也清楚。只展示活動圖片，去除手機截圖疊加的返回箭頭及右側灰色捲軸。不要加入其他優惠或網頁UI，無圓角（由網站加圓角）。保留所有指定繁體中文字及原品牌英文。",
+      "final": "assets/visual/shop-coupang-20261005.png"
+    },
+    {
+      "name": "shop-shopee-mall",
+      "source": "C:\\Users\\chrysyeh\\.codex\\generated_images\\01a0f3a4-2bb8-7381-b5be-9d2e316f46f1\\exec-bdc7c61c-bf53-4a25-811e-dd59646e40f1.png",
+      "prompt": "Use case: compositing. Edit target: attached cropped original campaign artwork. 請將此原活動宣傳圖重新編排為寬800高500像素、8:5比例的橫式banner。保留購賺點黑色標籤、蝦皮商城、筆筆回饋、2%，橘色Shopee Mall購物袋及橘色禮盒，奶油白橘色背景。 保留原本設計語言、品牌標誌形狀、角色產品與優惠数字，不要改為新的活動概念。等比縮放元素，延伸同風格背景以填滿整張，不拉伸、不留白邊框。將重要文案放在離四邊至少6%的安全範圍內，文字清楚易讀，讓300像素寬demo也清楚。只展示活動圖片，去除手機截圖疊加的返回箭頭及右側灰色捲軸。不要加入其他優惠或網頁UI，無圓角（由網站加圓角）。保留所有指定繁體中文字及原品牌英文。",
+      "final": "assets/visual/shop-shopee-mall-20261005.png"
+    },
+    {
+      "name": "shop-shopee-market",
+      "source": "C:\\Users\\chrysyeh\\.codex\\generated_images\\01a0f3a4-2bb8-7381-b5be-9d2e316f46f1\\exec-fdaa871e-95ee-4b05-b9e3-bb9e49e84597.png",
+      "prompt": "Use case: compositing. Edit target: attached cropped original campaign artwork. 請將此原活動宣傳圖重新編排為寬800高500像素、8:5比例的橫式banner。保留購賺點黑色標籤、蝦皮直營、生活超市、商城下單、筆筆回饋、2%，紅色購物籃白色S標誌、蔬菜油瓶罐頭等雜貨，紅白背景。 保留原本設計語言、品牌標誌形狀、角色產品與優惠数字，不要改為新的活動概念。等比縮放元素，延伸同風格背景以填滿整張，不拉伸、不留白邊框。將重要文案放在離四邊至少6%的安全範圍內，文字清楚易讀，讓300像素寬demo也清楚。只展示活動圖片，去除手機截圖疊加的返回箭頭及右側灰色捲軸。不要加入其他優惠或網頁UI，無圓角（由網站加圓角）。保留所有指定繁體中文字及原品牌英文。",
+      "final": "assets/visual/shop-shopee-market-20261005.png"
+    }
+  ]
+}
