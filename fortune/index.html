@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>今日幸運夥伴 Demo</title>
+<style>
+:root {
+  --purple:#5b2df2;
+  --purple2:#7c48ff;
+  --navy:#2d2b7d;
+  --orange:#ff922d;
+  --ink:#27265a;
+  --muted:#77759b;
+  --line:#e9e4ff;
+  --bg:#f7f6ff;
+  --card:#ffffff;
+  --shadow:0 12px 30px rgba(83,53,190,.14);
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  background:linear-gradient(180deg,#dff2ff 0%,#f8f7ff 28%,#fff 100%);
+  color:var(--ink);
+}
+.phone {
+  width:min(100%,430px);
+  min-height:100vh;
+  margin:0 auto;
+  background:linear-gradient(180deg,#e6f2ff 0,#f5f2ff 180px,#fff 100%);
+  box-shadow:0 0 0 1px rgba(70,40,180,.04);
+  overflow:hidden;
+}
+.topbar {
+  padding:14px 18px 18px;
+  background:linear-gradient(135deg,#6e73ff 0%,#5d31f2 48%,#ffb34d 120%);
+  color:#fff;
+  border-radius:0 0 28px 28px;
+}
+.status {
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:12px;opacity:.95;margin-bottom:10px;
+}
+.headline { display:flex;align-items:center;gap:10px; }
+.back { font-size:28px;line-height:1;opacity:.95; }
+.brand { font-size:19px;font-weight:800;letter-spacing:.4px; }
+.brand b { color:#ffc64b; }
+.subtitle { font-size:12px;opacity:.9;margin-top:2px; }
+.hero {
+  margin:0 14px;
+  transform:translateY(12px);
+  background:rgba(255,255,255,.96);
+  border-radius:22px;
+  padding:18px;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(255,255,255,.9);
+}
+.hero h1 { margin:0;font-size:26px;line-height:1.2;color:#39229c; }
+.hero p { margin:8px 0 0;color:#6f6b92;font-size:14px;line-height:1.6; }
+.ip-grid {
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:16px;
+}
+.mini {
+  width:60px;
+  text-align:center;
+}
+.mini img {
+  width:60px;
+  height:60px;
+  object-fit:cover;
+  border-radius:18px;
+  border:3px solid #fff;
+  box-shadow:0 6px 14px rgba(80,50,180,.16);
+}
+.mini span {
+  display:block;
+  margin-top:6px;
+  color:#574f86;
+  font-size:12px;
+  font-weight:800;
+}
+.content { padding:28px 14px 28px; }
+.panel {
+  background:#fff;
+  border-radius:22px;
+  padding:18px;
+  box-shadow:var(--shadow);
+  margin-bottom:14px;
+  border:1px solid #f0edff;
+}
+.drawbox {
+  min-height:312px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:radial-gradient(circle at 50% 10%,#fff 0,#fbf9ff 46%,#f1edff 100%);
+  border-radius:22px;
+  position:relative;
+  overflow:hidden;
+}
+.spark { position:absolute;font-size:22px;opacity:.75;animation:float 3s ease-in-out infinite; }
+.s1 { top:28px;left:28px; } .s2 { top:55px;right:32px;animation-delay:.5s; } .s3 { bottom:70px;left:36px;animation-delay:1s; }
+@keyframes float { 50% { transform:translateY(-8px) rotate(6deg); } }
+.orb {
+  width:170px;height:170px;border-radius:50%;margin:8px auto 18px;
+  background:radial-gradient(circle at 35% 30%,#fff 0 8%,#a987ff 13%,#6846ee 45%,#4a24d3 75%,#32158f 100%);
+  box-shadow:inset 0 0 28px rgba(255,255,255,.35),0 18px 36px rgba(91,45,242,.28);
+  display:grid;place-items:center;position:relative;
+}
+.orb:before { content:"?";color:white;font-size:72px;font-weight:900;text-shadow:0 4px 10px rgba(0,0,0,.12); }
+.orb:after { content:"";position:absolute;inset:-12px;border:2px dashed rgba(123,72,255,.26);border-radius:50%;animation:spin 10s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+.cta {
+  border:0;border-radius:999px;padding:15px 24px;width:100%;
+  background:linear-gradient(90deg,#5b2df2,#7d48ff);
+  color:#fff;font-size:17px;font-weight:800;box-shadow:0 10px 20px rgba(91,45,242,.28);
+  cursor:pointer;
+}
+.cta:active { transform:translateY(1px); }
+.note { font-size:12px;color:#8d89aa;margin-top:12px;line-height:1.5; }
+.hidden { display:none !important; }
+.loading { font-weight:800;color:#5b2df2;font-size:20px; }
+.slot { display:flex;gap:8px;margin:18px 0; }
+.slot img { width:58px;height:58px;border-radius:16px;object-fit:cover;box-shadow:0 4px 12px rgba(80,50,180,.12); }
+
+.result-card {
+  padding:0;
+  overflow:hidden;
+}
+.result-head {
+  padding:18px 18px 10px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  border-bottom:1px solid #f0edff;
+}
+.result-head small { display:block;color:#7d77a1;font-size:12px;margin-bottom:3px; }
+.result-head h2 { margin:0;color:#382685;font-size:28px;line-height:1.1; }
+.result-badge {
+  display:inline-flex;align-items:center;gap:6px;
+  color:#fff;background:#6a47ee;border-radius:999px;
+  padding:8px 12px;font-weight:800;font-size:13px;
+}
+.result-anim-wrap {
+  display:flex;
+  justify-content:center;
+  padding:18px 18px 8px;
+}
+.result-anim {
+  width:min(100%,320px);
+  border-radius:28px;
+  overflow:hidden;
+  background:#f7f3ff;
+  box-shadow:inset 0 0 0 1px rgba(108,62,225,.08);
+}
+.result-anim img {
+  display:block;
+  width:100%;
+  height:auto;
+}
+.result-body { padding:10px 18px 18px; }
+.scoreline {
+  display:flex;
+  align-items:stretch;
+  gap:12px;
+  margin-bottom:14px;
+}
+.scorebox, .keyword {
+  border-radius:18px;
+  padding:13px 14px;
+  flex:1;
+}
+.scorebox {
+  background:#f5f2ff;
+}
+.scorebox span, .keyword span {
+  font-size:12px;
+  display:block;
+  margin-bottom:4px;
+}
+.scorebox span { color:#807aa5; }
+.keyword span { color:#8f79b0; }
+.scorebox strong {
+  font-size:24px;
+  color:#5b2df2;
+}
+.keyword {
+  background:#f7f0ff;
+}
+.keyword strong {
+  font-size:18px;
+  color:#6a47ee;
+}
+.meter {
+  height:10px;border-radius:99px;background:#e8e1ff;overflow:hidden;margin-top:8px;
+}
+.meter i {
+  display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#6c3cf1,#ff9e3b);transition:width 1s ease;
+}
+.quote-box {
+  margin:0 0 14px;
+  padding:16px;
+  border-radius:20px;
+  background:linear-gradient(135deg,#fff9f0 0%,#fff 46%,#f8f3ff 100%);
+  border:1px solid #f3e3c9;
+  box-shadow:0 8px 18px rgba(255,145,45,.08);
+}
+.quote-kicker {
+  font-size:12px;
+  color:#9a6a2e;
+  font-weight:800;
+  margin-bottom:6px;
+  letter-spacing:.3px;
+}
+.quote-main {
+  font-size:18px;
+  line-height:1.6;
+  font-weight:900;
+  color:#392868;
+  margin:0 0 8px;
+}
+.quote-sub {
+  font-size:14px;
+  line-height:1.7;
+  color:#6d678f;
+  margin:0;
+}
+.task {
+  border:1px solid #ebe6ff;background:#fbfaff;border-radius:18px;padding:14px;
+}
+.task-title {
+  font-size:13px;color:#756f9a;font-weight:800;margin-bottom:8px;
+}
+.task-text {
+  font-size:16px;font-weight:700;line-height:1.6;
+}
+.actions {
+  display:flex;gap:10px;margin-top:14px;
+}
+.secondary, .primary-small {
+  flex:1;border-radius:999px;padding:12px;font-weight:800;cursor:pointer;
+}
+.secondary {
+  border:1px solid #ded6ff;background:#fff;color:#5b2df2;
+}
+.primary-small {
+  border:0;background:#5b2df2;color:#fff;
+}
+.demo-tip {
+  text-align:center;color:#918aad;font-size:11px;margin-top:10px;
+}
+.footer {
+  text-align:center;color:#9d98b6;font-size:11px;padding:8px 20px 24px;
+}
+a { color:#5b2df2; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <header class="topbar">
+    <div class="status"><span>9:18</span><span>▮▮▮ ◒</span></div>
+    <div class="headline">
+      <div class="back">‹</div>
+      <div>
+        <div class="brand"><b>GO</b>驚喜｜個人專屬</div>
+        <div class="subtitle">今天，也來收下你的好運</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>今日幸運夥伴 ✨</h1>
+    <p>五位遊戲樂園夥伴，今天會是誰陪你一起發光？</p>
+    <div class="ip-grid" id="ipGrid"></div>
+  </section>
+
+  <main class="content">
+    <section class="panel drawbox" id="drawView">
+      <span class="spark s1">⭐</span><span class="spark s2">✨</span><span class="spark s3">🎁</span>
+      <div class="orb"></div>
+      <button class="cta" id="drawBtn">抽出今日幸運夥伴</button>
+      <div class="note">Demo 版｜目前未串會員 UID。正式上線後可改成「UID + 日期」固定每日結果。</div>
+    </section>
+
+    <section class="panel drawbox hidden" id="loadingView">
+      <div class="loading">好運抽取中...</div>
+      <div class="slot" id="slot"></div>
+      <div class="note">讓遊戲樂園幫你挑一位今天的幸運夥伴</div>
+    </section>
+
+    <section class="panel result-card hidden" id="resultView">
+      <div class="result-head">
+        <div>
+          <small>今日幸運夥伴</small>
+          <h2 id="resultName"></h2>
+        </div>
+        <div class="result-badge" id="resultTag"></div>
+      </div>
+
+      <div class="result-anim-wrap">
+        <div class="result-anim">
+          <img id="resultGif" alt="">
+        </div>
+      </div>
+
+      <div class="result-body">
+        <div class="scoreline">
+          <div class="scorebox">
+            <span>今日幸運指數</span>
+            <strong id="resultScore"></strong>
+            <div class="meter"><i id="meterBar"></i></div>
+          </div>
+          <div class="keyword">
+            <span>今日關鍵字</span>
+            <strong id="resultKeyword"></strong>
+          </div>
+        </div>
+
+        <div class="quote-box">
+          <div class="quote-kicker">✨ 今日好運說明</div>
+          <p class="quote-main" id="resultShortQuote"></p>
+          <p class="quote-sub" id="resultLongQuote"></p>
+        </div>
+
+        <div class="task">
+          <div class="task-title">🎯 今日小任務</div>
+          <div class="task-text" id="resultTask"></div>
+        </div>
+
+        <div class="actions">
+          <button class="secondary" id="shareBtn">分享今日好運</button>
+          <button class="primary-small" id="backBtn">回 GO 驚喜</button>
+        </div>
+        <div class="demo-tip">Demo 測試用：<a href="#" id="resetBtn">重新抽一次</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">遊戲樂園 IP Demo｜每日只有好運，沒有壞運 💜</footer>
+</div>
+
+<script>
+const chars = [{"name": "橘米", "slug": "jumi", "tag": "活力好運", "emoji": "⭐", "color": "#ff9d2f", "soft": "#fff5e8", "score": 88, "keyword": "主動出擊", "shortQuote": "今天適合主動一點，好事正在等你靠近！", "longQuote": "今天的你特別有元氣，也比平常更容易把氣氛帶起來。別只是想一想，先跨出第一步，好運往往就藏在你主動靠近的那一刻。", "task": "把一件一直想做的小事，今天就先完成第一步。", "avatar": "assets/avatar_jumi.png", "gif": "assets/anim_jumi.gif"}, {"name": "小波", "slug": "xiaobo", "tag": "幸運好運", "emoji": "💜", "color": "#7b43ff", "soft": "#f4edff", "score": 92, "keyword": "驚喜降臨", "shortQuote": "今天的小幸運，可能就藏在你沒特別注意的地方。", "longQuote": "今天是適合期待小驚喜的一天，越是輕鬆的時候，越容易遇見讓你會心一笑的好事。別急著往前衝，先感受一下身邊的小小幸運吧。", "task": "留意今天第一個讓你覺得「欸，不錯耶」的小事情。", "avatar": "assets/avatar_xiaobo.png", "gif": "assets/anim_xiaobo.gif"}, {"name": "奶油捲", "slug": "naiyoujuan", "tag": "人氣好運", "emoji": "🎀", "color": "#ff5d93", "soft": "#fff1f6", "score": 90, "keyword": "人氣上升", "shortQuote": "今天你的笑容特別有感染力，分享一點好心情吧！", "longQuote": "今天的人際能量很不錯，你的溫柔和可愛很容易被注意到。多說一句鼓勵、多分享一點心情，都可能替你換來意想不到的暖心回應。", "task": "主動稱讚一個人，把今天的好心情傳出去。", "avatar": "assets/avatar_naiyoujuan.png", "gif": "assets/anim_naiyoujuan.gif"}, {"name": "智栗", "slug": "zhili", "tag": "靈感好運", "emoji": "💡", "color": "#5c2aa8", "soft": "#f3effb", "score": 86, "keyword": "靈感閃現", "shortQuote": "今天第一個冒出的想法，可能比你想像中更值得相信。", "longQuote": "今天適合慢一點觀察，你的腦袋會比平常更清楚。卡住的事情有機會突然找到解法，記得把靈感先留下來，它可能就是打開今天好運的關鍵。", "task": "把腦中突然想到的一個點子記下來，晚點再回頭看看。", "avatar": "assets/avatar_zhili.png", "gif": "assets/anim_zhili.gif"}, {"name": "遊之助", "slug": "youzhizhu", "tag": "行動好運", "emoji": "🐾", "color": "#4150c7", "soft": "#eef1ff", "score": 89, "keyword": "勇敢出發", "shortQuote": "別想太久，今天的好運藏在行動裡。", "longQuote": "今天很適合把猶豫變成行動，把想法真的做出來。你不一定要準備到一百分才開始，先往前走一步，很多好事就會在路上慢慢出現。", "task": "做一件平常會猶豫的小事，今天先試一次再說。", "avatar": "assets/avatar_youzhizhu.png", "gif": "assets/anim_youzhizhu.gif"}];
+
+const ipGrid = document.getElementById('ipGrid');
+chars.forEach(c => {
+  const d = document.createElement('div');
+  d.className = 'mini';
+  d.innerHTML = `<img src="${c.avatar}" alt="${c.name}"><span>${c.name}</span>`;
+  ipGrid.appendChild(d);
+});
+
+const drawView = document.getElementById('drawView');
+const loadingView = document.getElementById('loadingView');
+const resultView = document.getElementById('resultView');
+const slot = document.getElementById('slot');
+
+function todayKey() {
+  const d = new Date();
+  return `lucky-demo-${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function showResult(idx) {
+  const c = chars[idx];
+  document.getElementById('resultName').textContent = c.name;
+  document.getElementById('resultTag').textContent = `${c.emoji} ${c.tag}`;
+  document.getElementById('resultTag').style.background = c.color;
+  document.getElementById('resultGif').src = c.gif;
+  document.getElementById('resultScore').textContent = `${c.score}%`;
+  document.getElementById('resultKeyword').textContent = c.keyword;
+  document.getElementById('resultShortQuote').textContent = c.shortQuote;
+  document.getElementById('resultLongQuote').textContent = c.longQuote;
+  document.getElementById('resultTask').textContent = c.task;
+  document.querySelector('.quote-box').style.borderColor = c.color + '33';
+  document.querySelector('.quote-box').style.boxShadow = '0 8px 18px rgba(91,45,242,.08)';
+  drawView.classList.add('hidden');
+  loadingView.classList.add('hidden');
+  resultView.classList.remove('hidden');
+  document.getElementById('meterBar').style.width = '0';
+  setTimeout(() => document.getElementById('meterBar').style.width = `${c.score}%`, 80);
+}
+
+function doDraw() {
+  drawView.classList.add('hidden');
+  resultView.classList.add('hidden');
+  loadingView.classList.remove('hidden');
+  slot.innerHTML = '';
+  let ticks = 0;
+  const timer = setInterval(() => {
+    slot.innerHTML = '';
+    for (let i = 0; i < 3; i++) {
+      const c = chars[(ticks + i) % chars.length];
+      const img = document.createElement('img');
+      img.src = c.avatar;
+      img.alt = c.name;
+      slot.appendChild(img);
+    }
+    ticks++;
+  }, 120);
+
+  setTimeout(() => {
+    clearInterval(timer);
+    const idx = Math.floor(Math.random() * chars.length);
+    localStorage.setItem(todayKey(), String(idx));
+    showResult(idx);
+  }, 1800);
+}
+
+document.getElementById('drawBtn').addEventListener('click', doDraw);
+document.getElementById('resetBtn').addEventListener('click', e => {
+  e.preventDefault();
+  localStorage.removeItem(todayKey());
+  resultView.classList.add('hidden');
+  drawView.classList.remove('hidden');
+});
+document.getElementById('shareBtn').addEventListener('click', async () => {
+  const text = `我今天的幸運夥伴是 ${document.getElementById('resultName').textContent}！✨`;
+  if (navigator.share) {
+    try { await navigator.share({ title:'今日幸運夥伴', text }); } catch (e) {}
+  } else {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert('已複製分享文字！');
+    } catch(e) {
+      alert(text);
+    }
+  }
+});
+document.getElementById('backBtn').addEventListener('click', () => {
+  window.location.assign('../');
+});
+
+const saved = localStorage.getItem(todayKey());
+if (saved !== null) showResult(Number(saved));
+</script>
+</body>
+</html>

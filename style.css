@@ -356,3 +356,6 @@
 .sign-complete .dialog-actions .btn:last-child{border-left:2px solid #d8d8d8;color:#e48123}
 
 .tool-circle img[src$="tool-horoscope.png"],.tool-circle img[src$="tool-fortune.png"]{border-radius:50%}
+
+.tool-grid .tool-link{display:flex;flex-direction:column;align-items:center;gap:8px;padding:0;background:transparent;color:#4c4162;font:inherit;text-decoration:none}
+.tool-grid .tool-link:focus-visible{outline:4px solid #f5a61b;outline-offset:4px}

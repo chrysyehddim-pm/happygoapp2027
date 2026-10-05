@@ -1,0 +1,21 @@
+const assert=require('assert/strict'),path=require('path');
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+(async()=>{const browser=await chromium.launch({headless:true,executablePath:process.env.BROWSER_EXECUTABLE});try{
+ const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage(),errors=[];
+ context.on('page',p=>{p.on('pageerror',e=>errors.push(e.message));p.on('response',r=>{if(r.status()>=400)errors.push(r.status()+' '+r.url());});});
+ const base=process.env.DEMO_URL||'http://127.0.0.1:4174/';await page.goto(base);
+ for(const a of ['selection','choose-play'])await page.locator(`[data-action="${a}"]`).first().click();
+ const link=page.getByRole('link',{name:'求個好運，在新分頁開啟'});assert.equal(await link.getAttribute('href'),'fortune/');
+ const popupPromise=page.waitForEvent('popup');await link.click();const lucky=await popupPromise;await lucky.waitForLoadState();
+ assert.match(lucky.url(),/\/fortune\/$/);assert.equal(await page.locator('.category[data-type="play"]').count(),1);
+ await lucky.locator('#drawBtn').click();await lucky.locator('#resultView:not(.hidden)').waitFor();
+ const name=await lucky.locator('#resultName').innerText();assert(name.length>0);assert.match(await lucky.locator('#resultScore').innerText(),/%/);
+ await lucky.evaluate(()=>Promise.all([...document.images].filter(i=>i.src).map(i=>i.decode())));
+ assert(await lucky.locator('#resultGif').evaluate(e=>e.naturalWidth>0));
+ await lucky.screenshot({path:path.resolve('test-results/fortune-mobile.png'),fullPage:true});
+ await lucky.reload();assert.equal(await lucky.locator('#resultName').innerText(),name);
+ await lucky.locator('#resetBtn').click();assert(await lucky.locator('#drawView').isVisible());
+ await lucky.locator('#drawBtn').click();await lucky.locator('#resultView:not(.hidden)').waitFor();
+ await lucky.locator('#backBtn').click();await lucky.waitForURL(u=>!u.pathname.includes('/fortune/'));assert.equal(await lucky.locator('#phone').count(),1);
+ assert.deepEqual(errors,[]);console.log('PASS: native fortune link opens independent tab, PNG/GIF load, draw result and daily persistence, reset, return to GO, mobile.');
+ }finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

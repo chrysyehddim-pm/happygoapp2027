@@ -60,3 +60,6 @@ AI 入口約 4 秒後靠右收合。點擊收合入口先展開，再點進入�
 - `tools/build-pages.cjs`：公開展示包建置。
 - `tools/test-demo.cjs`：瀏覽器旅程回歸測試。
 
+
+
+求個好運獨立 Demo：`fortune/index.html`，公開路徑 `https://chrysyehddim-pm.github.io/happygoapp2027/fortune/`。圖片與動畫位於 `fortune/assets/`，與主 Demo 一起建置及部署。
