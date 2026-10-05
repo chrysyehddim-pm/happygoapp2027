@@ -15,7 +15,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
   await page.locator(`[data-action="tab"][data-type="${type}"]`).click();await decode();
   assert.deepEqual(await page.locator('.tool-label').allTextContents(),labels[type]);assert.equal(await page.locator('.tool-circle img').count(),4);
   positions.push(await page.locator('.egg').evaluate(e=>e.offsetTop));
-  for(let i=0;i<4;i++){const entry=page.locator('.tool-grid button,.tool-grid a').nth(i);if(type==='play'&&i===3){const popupPromise=page.waitForEvent('popup');await entry.click();const popup=await popupPromise;await popup.waitForLoadState();assert.match(popup.url(),/\/fortune\//);await popup.close();}else{await entry.click();assert.match(await page.locator('.topbar').innerText(),new RegExp(labels[type][i]));await act('back');}}
+  for(let i=0;i<4;i++){const entry=page.locator('.tool-grid button,.tool-grid a').nth(i);if(type==='play'&&i===3){await entry.click();assert.equal(await page.locator('.fortune-frame').count(),1);await page.frameLocator('.fortune-frame').locator('#headerBackBtn').click();await page.locator('.category[data-type="play"]').waitFor();}else{await entry.click();assert.match(await page.locator('.topbar').innerText(),new RegExp(labels[type][i]));await act('back');}}
   await act('edit-tools');const editText=await page.locator('#overlay').innerText();assert(labels[type].every(label=>editText.includes(label)));await act('close');
   if(type==='life'){
    assert.equal(await page.locator('[data-banner="utag"] h2').innerText(),'旅遊交通');await act('utag');assert.match(await page.locator('.topbar').innerText(),/旅遊交通/);await act('back');

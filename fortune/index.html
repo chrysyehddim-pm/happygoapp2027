@@ -4,6 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>今日幸運夥伴 Demo</title>
+<script>if(window.parent!==window)document.documentElement.classList.add("embedded");</script>
 <style>
 :root {
   --purple:#5b2df2;
@@ -24,6 +25,7 @@ body {
   background:linear-gradient(180deg,#dff2ff 0%,#f8f7ff 28%,#fff 100%);
   color:var(--ink);
 }
+html.embedded .phone{width:100%;box-shadow:none}
 .phone {
   width:min(100%,430px);
   min-height:100vh;
@@ -43,7 +45,7 @@ body {
   font-size:12px;opacity:.95;margin-bottom:10px;
 }
 .headline { display:flex;align-items:center;gap:10px; }
-.back { font-size:28px;line-height:1;opacity:.95; }
+.back { font-size:28px;line-height:1;opacity:.95;border:0;padding:0;background:transparent;color:inherit;cursor:pointer; }
 .brand { font-size:19px;font-weight:800;letter-spacing:.4px; }
 .brand b { color:#ffc64b; }
 .subtitle { font-size:12px;opacity:.9;margin-top:2px; }
@@ -268,7 +270,7 @@ a { color:#5b2df2; }
   <header class="topbar">
     <div class="status"><span>9:18</span><span>▮▮▮ ◒</span></div>
     <div class="headline">
-      <div class="back">‹</div>
+      <button class="back" id="headerBackBtn" aria-label="回 GO 驚喜">‹</button>
       <div>
         <div class="brand"><b>GO</b>驚喜｜個人專屬</div>
         <div class="subtitle">今天，也來收下你的好運</div>
@@ -414,6 +416,7 @@ function doDraw() {
   }, 1800);
 }
 
+document.getElementById('headerBackBtn').addEventListener('click',returnToGo);
 document.getElementById('drawBtn').addEventListener('click', doDraw);
 document.getElementById('resetBtn').addEventListener('click', e => {
   e.preventDefault();
@@ -435,9 +438,10 @@ document.getElementById('shareBtn').addEventListener('click', async () => {
   }
 });
 document.getElementById('backBtn').addEventListener('click', () => {
-  window.location.assign('../');
+  returnToGo();
 });
 
+function returnToGo(){if(window.parent!==window){window.parent.postMessage({type:'fortune-return'},window.location.origin);}else window.location.assign('../');}
 const saved = localStorage.getItem(todayKey());
 if (saved !== null) showResult(Number(saved));
 </script>

@@ -63,3 +63,5 @@ AI 入口約 4 秒後靠右收合。點擊收合入口先展開，再點進入�
 
 
 求個好運獨立 Demo：`fortune/index.html`，公開路徑 `https://chrysyehddim-pm.github.io/happygoapp2027/fortune/`。圖片與動畫位於 `fortune/assets/`，與主 Demo 一起建置及部署。
+
+求個好運小工具目前以同頁手機外框內嵌方式開啟，返回保留遊戲玩樂與點數狀態；獨立網址仍可直接使用。
