@@ -24,7 +24,7 @@ function startFab(){fabReminders=0;const fab=screen.querySelector('.ai-fab');if(
 function noteFabActivity(){if(current.page!=='category')return;pauseFab();resumeFab();}
 function clearPending(){pauseFab();if(state?.pending){state.chat.push({role:'assistant',text:'剛才的整理已中斷，你可以重新提問。'});state.pending=0;}timers.forEach(clearTimeout);timers=[];if(rotation)clearInterval(rotation);}
 function toast(text){const el=document.getElementById('toast');el.textContent=text;el.classList.add('visible');schedule(()=>el.classList.remove('visible'),2200);}
-function reset(){clearPending();state={category:'shop',balance:800,campaign:0,consumptionCount:2,claimed:false,redeemed:false,coupon:false,linked:false,qty:1,chat:[],preferences:false,fromEgg:false};history=[];navigate('home',{},false);}
+function reset(clearFortune=false){if(clearFortune){Object.keys(localStorage).filter(key=>/^lucky-demo-\d{4}-\d{2}-\d{2}$/.test(key)).forEach(key=>localStorage.removeItem(key));}clearPending();state={category:'shop',balance:800,campaign:0,consumptionCount:2,claimed:false,redeemed:false,coupon:false,linked:false,qty:1,chat:[],preferences:false,fromEgg:false};history=[];navigate('home',{},false);}
 function navigate(page,args={},remember=true){clearPending();if(remember&&current.page)history.push({...current});current={page,...args};overlay.innerHTML='';screen.innerHTML=render();screen.scrollTop=0;document.getElementById('toast').classList.remove('visible');if(page==='category'){startCarousel();startFab();}if(page==='ai')scrollChat();}
 function back(){if(overlay.innerHTML){overlay.innerHTML='';resumeFab();return;}const previous=history.pop();if(previous)navigate(previous.page,previous,false);else navigate('home',{},false);}
 function enterCategory(type){state.category=type;navigate('category');}
@@ -131,7 +131,7 @@ reducedMotion.addEventListener('change',()=>{pauseFab();resumeFab();});
 document.addEventListener('click',e=>{const el=e.target.closest('[data-action]');if(el)handle(el.dataset.action,el);});
 document.addEventListener('submit',e=>{if(e.target.id==='ai-form'){e.preventDefault();if(e.isComposing)return;ask(document.getElementById('ai-text').value);}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')back();if(e.key==='Tab'&&overlay.innerHTML){const items=[...overlay.querySelectorAll('button,input,[tabindex="0"]')];const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last?.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first?.focus();}}});
-document.getElementById('restart').addEventListener('click',reset);
+document.getElementById('restart').addEventListener('click',()=>reset(true));
 document.getElementById('fullscreen').addEventListener('click',()=>{if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.().catch(()=>toast('可使用瀏覽器的全螢幕模式'));});
 function resize(){const mobile=window.innerWidth<=700;const availableHeight=window.innerHeight-(mobile?48:86);const s=Math.min((window.innerWidth-(mobile?0:40))/640,availableHeight/1334,mobile?1:.72);document.documentElement.style.setProperty('--scale',s);}
 window.addEventListener('resize',resize);resize();reset();

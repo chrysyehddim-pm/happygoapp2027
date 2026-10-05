@@ -20,6 +20,14 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
  await lucky.locator('#headerBackBtn').click();await page.locator('.category[data-type="play"]').waitFor();
  await act('ai');if(await page.locator('#ai-text').count()===0)await act('ai');await page.locator('#ai-text').fill('我有多少點數？');await page.locator('#ai-text').press('Enter');
  await page.waitForTimeout(800);assert.match(await page.locator('#conversation').innerText(),/810/);
+ await act('back');await act('fortune');await lucky.locator('#drawBtn').click();await lucky.locator('#resultView:not(.hidden)').waitFor();
+ await page.evaluate(()=>localStorage.setItem('unrelated-test-value','keep'));
+ await page.locator('#restart').click();for(const a of ['selection','choose-play','fortune'])await act(a);
+ assert(await lucky.locator('#drawView').isVisible());assert(await lucky.locator('#resultView').isHidden());
+ assert.equal(await page.evaluate(()=>localStorage.getItem('unrelated-test-value')),'keep');
+ await lucky.locator('#drawBtn').click();await lucky.locator('#resultView:not(.hidden)').waitFor();
+ const freshName=await lucky.locator('#resultName').innerText();await page.reload();for(const a of ['selection','choose-play','fortune'])await act(a);
+ assert.equal(await lucky.locator('#resultName').innerText(),freshName);
  // Standalone URL continues to support its own return to the demo.
  await page.goto(new URL('fortune/',base).href);if(await page.locator('#drawView').isVisible()){await page.locator('#drawBtn').click();await page.locator('#resultView:not(.hidden)').waitFor();}
  await page.locator('#backBtn').click();await page.waitForURL(u=>!u.pathname.includes('/fortune/'));assert.equal(await page.locator('#phone').count(),1);
