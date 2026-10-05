@@ -1,0 +1,20 @@
+{
+  "method": "Built-in imagegen; transparent square icons",
+  "images": [
+    {
+      "name": "tool-horoscope",
+      "prompt": "Generate one square flat illustrated small mobile utility icon. Attached existing membership icon is STYLE REFERENCE only, not subject. Match its thick smooth muted purple outlines (#54458c), orange/golden accents, white fills, simple friendly shapes. A simple crystal ball showing a small zodiac constellation and a few stars. Clear recognizable horoscope symbol. Center symbol occupying about 72% of square, on a white circular disk filling 94% of canvas, genuinely transparent outside disk. Same visual weight as reference, no gradients, shadows, 3D, text, labels, or extra objects. Output transparent PNG.",
+      "final": "assets/visual/tool-horoscope.png"
+    },
+    {
+      "name": "tool-fortune",
+      "prompt": "Generate one square flat illustrated small mobile utility icon. Attached existing membership icon is STYLE REFERENCE only, not subject. Match its thick smooth muted purple outlines (#54458c), orange/golden accents, white fills, simple friendly shapes. A traditional Taiwanese temple fortune-stick cylinder 籤筒 with several slender bamboo fortune sticks sticking out at different heights. Orange-gold cylindrical wooden container, purple outlined rim/base and a simple decorative diamond motif. NOT Japanese omamori, no paper envelope. No Chinese lettering. Center symbol occupying about 72% of square, on a white circular disk filling 94% of canvas, genuinely transparent outside disk. Same visual weight as reference, no gradients, shadows, 3D, text, labels, or extra objects. Output transparent PNG.",
+      "final": "assets/visual/tool-fortune.png"
+    }
+  ],
+  "survey": {
+    "source": "User supplied questionnaire attachment",
+    "method": "Crop original icon without the old label",
+    "final": "assets/visual/tool-survey.png"
+  }
+}

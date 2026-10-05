@@ -10,7 +10,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
  assert.match(await page.locator('.campaign-info h3').innerText(),/【鑽點購物紅包】/);assert.match(await page.locator('.progress-value').innerText(),/2\s*／\s*7/);
  await decode();assert.equal(await page.locator('.campaign-art img').evaluate(e=>e.naturalWidth),1040);assert.match(await page.locator('.campaign-art img').getAttribute('src'),/campaign-redpacket/);
  await act('campaign-info');assert.match(await page.locator('#overlay h2').innerText(),/鑽點購物紅包/);await act('close');
- const labels={shop:['點數安全鎖','附近店家','免運到貨','領神券'],play:['會員權益','發票森林','遊戲樂園','GO HEALTH'],life:['熱門兌換','點數放大','永續生活','便利服務']},positions=[];
+ const labels={shop:['點數安全鎖','附近店家','免運到貨','領神券'],play:['會員權益','問卷得點','星座運勢','求個好運'],life:['熱門兌換','點數放大','永續生活','便利服務']},positions=[];
  for(const type of ['shop','play','life']){
   await page.locator(`[data-action="tab"][data-type="${type}"]`).click();await decode();
   assert.deepEqual(await page.locator('.tool-label').allTextContents(),labels[type]);assert.equal(await page.locator('.tool-circle img').count(),4);
@@ -18,6 +18,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
   for(let i=0;i<4;i++){await page.locator('.tool-grid button').nth(i).click();assert.match(await page.locator('.topbar').innerText(),new RegExp(labels[type][i]));await act('back');}
   await act('edit-tools');const editText=await page.locator('#overlay').innerText();assert(labels[type].every(label=>editText.includes(label)));await act('close');
   if(type==='life'){
+   assert.equal(await page.locator('[data-banner="utag"] h2').innerText(),'旅遊交通');await act('utag');assert.match(await page.locator('.topbar').innerText(),/旅遊交通/);await act('back');
    assert.equal(await page.locator('.ticket-combined').count(),1);assert.deepEqual(await page.locator('.ticket-pane h2').allTextContents(),['兌點加碼活動','推薦票券 800點內']);
    assert(await page.locator('.ticket-combined').evaluate(e=>{const r=e.getBoundingClientRect();return [...e.querySelectorAll('h2,.ticket-banner,.ticket-description,.ticket-footer')].every(i=>{const b=i.getBoundingClientRect();return b.left>=r.left&&b.right<=r.right+1&&b.bottom<=r.bottom+1;});}));
    await act('ticket-event');assert.match(await page.locator('#overlay').innerText(),/240/);await act('close');await act('coco-detail');assert.match(await page.locator('.page-content h2').innerText(),/CoCo/);await act('back');
