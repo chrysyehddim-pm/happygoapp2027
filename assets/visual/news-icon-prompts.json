@@ -1,0 +1,5 @@
+{
+  "mode": "built-in image_gen",
+  "asset": "tool-news.png",
+  "prompt": "Create ONE raster app shortcut icon for「新聞快報」. Input image is a STYLE REFERENCE ONLY: match its flat friendly Taiwanese app icon style, thick muted dark-purple outlines (#51428A), warm orange (#F09A2B), white paper, simple rounded shapes, white circular backplate. Replace clipboard/questionnaire/pencil motif with a slightly folded newspaper: rounded rectangular newspaper with a bold short dark-purple header bar, an orange square news photo area, and 3-4 tidy purple horizontal article lines. Small orange broadcast rays at upper-right convey breaking news. Center a SINGLE icon on square canvas; icon fits within the same circle and occupies similar proportion as reference; clear at 60px. White circle behind icon, actual transparent background OUTSIDE circle (no gray square, no checkerboard). No text, no captions, no lettering, no branding, no 3D, no gradients, no shadow. This is the standalone icon only; label 新聞快報 will be rendered separately in app later. Preserve consistent stroke weight and purple/orange visual language of reference."
+}

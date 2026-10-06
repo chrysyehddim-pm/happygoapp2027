@@ -174,3 +174,8 @@ AI 入口進頁約 4 秒後收合；之後每閒置 10 秒向內探出 24px、�
 ## 發票戰士懸停比例修正（2026/10/05）
 
 背景與人物改用warrior-background及warrior-character明確類別取代first-child/last-child，避免懸停圖片工具插入控制元素後失去人物尺寸樣式。保留既有比例、淡化背景及入口按鈕。test-warrior-hover.cjs驗證桌面懸停前中後、模擬附加圖片工具按鈕、手機尺寸與發票森林導航通過。
+
+
+## 新聞快報小工具（2026/10/06）
+
+遊戲玩樂原問卷得點入口替換為新聞快報，採用已確認的紫橘報紙icon，更新入口名稱、編輯清單與服務页說明，沿用既有service導航與返回流程。其他小工具及流程保留。test-personal-tools.cjs通過三類共12個小工具入口、編輯名稱、手機畫面、原票券與旅遊交通入口、無404及JS錯誤。圖示與內建image_gen提示詞存於assets/visual/tool-news.png及news-icon-prompts.json。

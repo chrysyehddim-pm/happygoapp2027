@@ -10,7 +10,7 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
  assert.match(await page.locator('.campaign-info h3').innerText(),/【鑽點購物紅包】/);assert.match(await page.locator('.progress-value').innerText(),/2\s*／\s*7/);
  await decode();assert.equal(await page.locator('.campaign-art img').evaluate(e=>e.naturalWidth),1040);assert.match(await page.locator('.campaign-art img').getAttribute('src'),/campaign-redpacket/);
  await act('campaign-info');assert.match(await page.locator('#overlay h2').innerText(),/鑽點購物紅包/);await act('close');
- const labels={shop:['點數安全鎖','附近店家','免運到貨','領神券'],play:['會員權益','問卷得點','星座運勢','求個好運'],life:['熱門兌換','點數放大','永續生活','便利服務']},positions=[];
+ const labels={shop:['點數安全鎖','附近店家','免運到貨','領神券'],play:['會員權益','新聞快報','星座運勢','求個好運'],life:['熱門兌換','點數放大','永續生活','便利服務']},positions=[];
  for(const type of ['shop','play','life']){
   await page.locator(`[data-action="tab"][data-type="${type}"]`).click();await decode();
   assert.deepEqual(await page.locator('.tool-label').allTextContents(),labels[type]);assert.equal(await page.locator('.tool-circle img').count(),4);
